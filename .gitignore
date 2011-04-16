@@ -1,0 +1,12 @@
+.settings
+.actionScriptProperties
+.flexLibProperties
+.FlexUnitSettings
+.project
+.DS_Store
+bin-debug/
+*bin/
+target/
+.hg/
+.hgignore
+.redo
