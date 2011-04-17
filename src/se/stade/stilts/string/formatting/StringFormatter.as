@@ -3,6 +3,8 @@ package se.stade.stilts.string.formatting
 	import flash.utils.Dictionary;
 	import flash.utils.getDefinitionByName;
 	import flash.utils.getQualifiedClassName;
+	
+	import se.stade.daffodil.define;
 
 	public class StringFormatter implements Formatter
 	{
@@ -43,8 +45,7 @@ package se.stade.stilts.string.formatting
 					var end:String = template.slice(match.index + match[0].length);
 					
 					var substitute:* = subs[token];
-					var substituteType:Class = getDefinitionByName(getQualifiedClassName(substitute)) as Class;
-					var typeFormatter:TypeFormatter = typeFormatters[substituteType];
+					var typeFormatter:TypeFormatter = typeFormatters[define(substitute)];
 					
 					var substitution:String = typeFormatter ? typeFormatter.format(substitute, parameters) : substitute.toString();
 					
