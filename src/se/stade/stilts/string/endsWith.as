@@ -1,4 +1,4 @@
-package se.stade.stilts.string.manipulation
+package se.stade.stilts.string
 {
 	public function endsWith(subject:String, value:String):Boolean
 	{

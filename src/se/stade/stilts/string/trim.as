@@ -1,4 +1,4 @@
-package se.stade.stilts.string.formatting.utils
+package se.stade.stilts.string
 {
 	public function trim(value:String):String
 	{

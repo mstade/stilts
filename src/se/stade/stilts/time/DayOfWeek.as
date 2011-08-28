@@ -1,16 +1,16 @@
 package se.stade.stilts.time
 {
-	import se.stade.stilts.numerical.Enum;
+	import se.stade.stilts.numbers.Enum;
 	
 	public final class DayOfWeek extends Enum
 	{
-		public static const Sunday:DayOfWeek = new DayOfWeek(Sunday, 0);
-		public static const Monday:DayOfWeek = new DayOfWeek(Monday);
-		public static const Tuesday:DayOfWeek = new DayOfWeek(Tuesday);
-		public static const Wednesday:DayOfWeek = new DayOfWeek(Wednesday);
-		public static const Thursday:DayOfWeek = new DayOfWeek(Thursday);
-		public static const Friday:DayOfWeek = new DayOfWeek(Friday);
-		public static const Saturday:DayOfWeek = new DayOfWeek(Saturday);
+		public static const Sunday:DayOfWeek    = new DayOfWeek(Sunday,    0);
+		public static const Monday:DayOfWeek    = new DayOfWeek(Monday,    1);
+		public static const Tuesday:DayOfWeek   = new DayOfWeek(Tuesday,   2);
+		public static const Wednesday:DayOfWeek = new DayOfWeek(Wednesday, 3);
+		public static const Thursday:DayOfWeek  = new DayOfWeek(Thursday,  4);
+		public static const Friday:DayOfWeek    = new DayOfWeek(Friday,    5);
+		public static const Saturday:DayOfWeek  = new DayOfWeek(Saturday,  6);
 		
 		public static function From(value:uint):DayOfWeek
 		{
@@ -35,6 +35,7 @@ package se.stade.stilts.time
 		
 		public function DayOfWeek(self:Enum, value:Number=NaN)
 		{
+			self = this;
 			super(this, value);
 		}
 	}

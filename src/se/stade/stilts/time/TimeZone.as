@@ -1,7 +1,5 @@
 package se.stade.stilts.time
 {
-	import se.stade.stilts.numerical.Enum;
-	
 	public final class TimeZone
 	{
 		public static const UTC:TimeZone = new TimeZone(TimeSpan.Zero, "Z");

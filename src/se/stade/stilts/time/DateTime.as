@@ -1,7 +1,6 @@
 package se.stade.stilts.time
 {
-	import se.stade.stilts.string.formatting.format;
-	import se.stade.stilts.string.formatting.utils.padLeft;
+	import se.stade.stilts.string.padLeft;
 
 	public class DateTime
 	{
@@ -70,7 +69,7 @@ package se.stade.stilts.time
 			
 			if (timezone)
 			{
-				date.time += timezone;
+				date.time += timezone.offset.milliseconds;
 				_timezone = timezone;
 			}
 			else	
@@ -218,15 +217,14 @@ package se.stade.stilts.time
 			var mm:String = padLeft("00", minute.toString());
 			var ss:String = padLeft("00", second.toString());
 			
-			return format("{year}-{month}-{day}T{hour}:{min}:{sec}{tz}", {
-				year: YYYY,
-				month: MM,
-				day: DD,
-				hour: hh,
-				min: mm,
-				sec: ss,
-				tz: timezone.toUTCString()
-			});
+			return "{year}-{month}-{day}T{hour}:{min}:{sec}{tz}"
+			       .replace("{year}",  YYYY)
+				   .replace("{month}", MM)
+				   .replace("{day}",   DD)
+				   .replace("{hour}",  hh)
+				   .replace("{min}",   mm)
+				   .replace("{sec}",   ss)
+				   .replace("{tz}",    timezone.toUTCString());
 		}
 
 		public function valueOf():Object

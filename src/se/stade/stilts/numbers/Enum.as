@@ -1,11 +1,10 @@
-package se.stade.stilts.numerical
+package se.stade.stilts.numbers
 {
-	import flash.errors.IllegalOperationError;
+	import se.stade.stilts.errors.AbstractTypeError;
+
 	import flash.utils.describeType;
 	import flash.utils.getDefinitionByName;
 	import flash.utils.getQualifiedClassName;
-	
-	import se.stade.stilts.errors.AbstractTypeError;
 
 	public class Enum
 	{
