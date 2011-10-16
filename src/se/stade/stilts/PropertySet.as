@@ -13,11 +13,7 @@ package se.stade.stilts
                 return set;
 
             set = new PropertySet;
-            
-            for (var name:String in object)
-            {
-                set[name] = object[name];
-            }
+            set.setProperties(object);
             
             return set;
         }
